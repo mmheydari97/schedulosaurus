@@ -1,0 +1,88 @@
+{% extends 'page/base.html' %}
+
+{% load jformat %}
+{% load exteras %}
+{% block JS %}
+    <script src="../../static/js/index.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="container" id="test">
+        <div class="col-md-8 col-sm-12 d-flex justify-content-center">
+            <h2>{{ relDT|jformat:"%d %m %Y"|datefarsi }}</h2>
+        </div>
+		<div class="row">
+	    	<div class="col-lg-8 col-md-12 d-flex justify-content-center">
+			<form class="form" method="POST">
+	      	<table class="table table-hover">
+	      		<thead>
+                    <tr>
+                        <th>عنوان کار</th>
+                        <th>شروع</th>
+                        <th>پایان</th>
+                        <th>مدت زمان</th>
+                    </tr>
+				</thead>
+                <tbody>
+
+                {% for task in tasks %}
+
+                    <tr>
+						<td>{{ task.title }}</td>
+						<td>{{ task.sTime }}</td>
+                        {% if task.eTime == Null %}
+                        <td>
+							<button type="reset" class="btn btn-lg btn-end" value={{ task.id }} onClick="window.location.reload()">اتمام</button>
+						</td>
+						<td> ... </td>
+                        {% else %}
+						<td>{{ task.eTime }}</td>
+						<td>{{ task.get_duration }}</td>
+                        {% endif %}
+					</tr>
+
+                {% endfor %}
+
+				</tbody>
+	      	</table>
+
+                {{ form.as_p }}
+                {% csrf_token %}
+			<!--<input type="text" name="title" maxlength="100" id="id_title" class="form-control text text-lg" placeholder="کار جدید وارد کنید ...">-->
+		</form>
+		</div>
+	    <div class="col-lg-4 col-md-12">
+            <!--<form class="form-inline d-flex justify-content-center " >
+                <div class="form-group mx-sm-2">
+                      <input type="text" class="form-control text" placeholder="جستجو از تاریخ :">
+                </div>
+                <div class="form-group mx-sm-2">
+                      <input type="text" class="form-control text" placeholder="تا تاریخ: ">
+                </div>
+            </form>-->
+            <form	class="form jumbotron">
+                <h1>بسته های کاری</h1>
+
+                <ul class="list-group Boxes">
+                    {% for packet in packets %}
+                    <li class="list-group-item"><a href="{{ packet.id }}"><bdi>{{ packet }}</bdi></a></li>
+                    {% endfor %}
+                </ul>
+                <!--<nav>
+                    <ul class="pagination pagination-sm justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">قبلی</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">بعدی</a>
+                        </li>
+                    </ul>
+                </nav>-->
+                <button class="btn btn-lg form-control btn-create" id="btn" >ایجاد بسته کاری جدید</button>
+            </form>
+	    </div>
+	  </div>
+	</div>
+{% endblock %}

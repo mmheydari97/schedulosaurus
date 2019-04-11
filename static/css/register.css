@@ -1,0 +1,138 @@
+body {
+  font-family: "B Nazanin";
+  font-weight: normal;
+  font-style: normal;
+  background: linear-gradient(90deg, #0fb8ad, #1fc8db, #2cb5e8);
+  color: #247ba0;
+  font-size: 24px;
+  padding-top: 150px;
+}
+
+li {
+  background-color: #b2dbbf;
+}
+li a {
+  color: #247ba0;
+}
+li a:hover {
+  text-decoration: none;
+}
+
+li:hover {
+  text-decoration: none;
+  background-color: #b2dbbf;
+}
+
+.table {
+  margin: auto;
+  width: 100%;
+  direction: rtl;
+}
+
+.form {
+  margin: 20px;
+  width: 100%;
+}
+
+.form-inline {
+  direction: rtl;
+  padding-left: 50px;
+}
+
+.container {
+  align-content: center;
+  margin: auto;
+  max-width: 90%;
+}
+
+.navbar {
+  background-color: #b2dbbf;
+  max-height: 150px !important;
+}
+
+.navbar-text {
+  direction: rtl;
+}
+
+table thead {
+  background-color: #70c1b3;
+}
+table thead th {
+  text-align: center;
+}
+table tbody tr td {
+  text-align: center;
+  background-color: rgba(230, 230, 255, 0.7);
+}
+
+.list-group-item {
+  background-color: #dcffe6;
+  text-align: center;
+}
+
+.btn-end {
+  color: white;
+  background-color: #ff1654;
+}
+
+.btn-end:hover {
+  background-color: white;
+  color: #ff1654;
+  box-shadow: 2px 2px 5px #ff1654;
+}
+
+.btn-create {
+  color: white;
+  font-size: 1.25em;
+  background-color: #70c1b3;
+  margin-top: inherit;
+}
+
+.btn-create:hover {
+  background-color: white;
+  color: #70c1b3;
+  box-shadow: 2px 2px 5px #70c1b3;
+}
+
+h1 {
+  text-align: right;
+  margin-bottom: inherit;
+}
+
+h2 {
+  direction: rtl;
+}
+
+.text {
+  margin: auto;
+  max-width: 100%;
+  text-align: right;
+  background-color: #dcffe6;
+  color: #247ba0;
+}
+
+.text-lg {
+  margin-top: 35px;
+  font-size: 1.25em;
+}
+
+.text::-webkit-input-placeholder {
+  color: #247ba0;
+  direction: rtl;
+}
+
+.Boxes {
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.profile {
+  border-radius: 45px;
+  width: 60px;
+  height: 60px;
+}
+
+label {
+  float: right;
+}
