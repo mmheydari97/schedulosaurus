@@ -8,3 +8,8 @@ Users only have access to issues of their own!
 
 ### First internship assignment
 so it has a way to go for being perfect :)
+
+
+## License
+
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details
